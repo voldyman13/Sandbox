@@ -15,8 +15,8 @@ public class WikiHomePageTest extends TestBase {
 
     @Test
     public void testOpeningEnglishWiki(){
-// findAndClickTheEnglishLink
-        click(By.className("lang1"));
+        openSite("https://www.wikipedia.org/");
+        changeLanguageToEnglish();
         System.out.println(getUrl());
         Assert.assertEquals(getUrl(),"https://en.wikipedia.org/wiki/Main_Page");
     }

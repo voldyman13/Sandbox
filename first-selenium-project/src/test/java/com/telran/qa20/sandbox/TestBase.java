@@ -10,12 +10,19 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     WebDriver driver;
+
     @BeforeMethod
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        openSite("https://www.wikipedia.org/");
     }
+
+    @AfterMethod
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.quit();
+    }
+
     public String getUrl(){
         return driver.getCurrentUrl();
     }
@@ -30,10 +37,8 @@ public class TestBase {
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
     }
-    @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
-    }
 
+    protected void changeLanguageToEnglish() {
+        click(By.className("lang1"));
+    }
 }

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="addressbook-selenium-tests.main" target="1.8" />
+      <module name="addressbook-selenium-tests.test" target="1.8" />
       <module name="first-selenium-project.main" target="1.8" />
       <module name="first-selenium-project.test" target="1.8" />
     </bytecodeTargetLevel>
