@@ -74,10 +74,10 @@ public class TestBase {
         return elementCounter(By.className("group"));
     }
 
-    public void fillGroupForm(String groupName, String groupHeader, String groupFooter) {
-        type(By.name("group_name"), groupName);
-        type(By.name("group_header"), groupHeader);
-        type(By.name("group_footer"), groupFooter);
+    public void fillGroupForm(Group group) {
+        type(By.name("group_name"), group.getGroupName());
+        type(By.name("group_header"), group.getGroupHeader());
+        type(By.name("group_footer"), group.getGroupFooter());
     }
 
     public void submitGroupCreation() {

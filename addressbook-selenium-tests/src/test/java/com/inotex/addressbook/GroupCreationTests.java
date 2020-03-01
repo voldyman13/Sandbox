@@ -13,7 +13,7 @@ public class GroupCreationTests extends TestBase{
         openGroupPage();
         int before = getCountGroup();
         initGroupCreation();
-        fillGroupForm("This is group name", "This is header", "This is comment");
+        fillGroupForm(new Group("This is group name", "This is header", "This is comment"));
         submitGroupCreation();
         String actualMessage = getMessage();
         Assert.assertEquals(actualMessage, expectedrMessage);

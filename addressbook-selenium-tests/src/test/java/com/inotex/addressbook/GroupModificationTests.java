@@ -31,6 +31,8 @@ public class GroupModificationTests extends TestBase{
         Assert.assertEquals(newGroupName, "New " + groupName);
         Assert.assertEquals(newGroupHeader, "Modified " + groupHeader);
         Assert.assertEquals(newGroupFooter, "Modified " + groupFooter);
+        returnToGroupPage();
+
     }
 
 }

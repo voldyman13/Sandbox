@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Regression_test" >
+        <classes>
+            <class name="com.inotex.addressbook.GroupCreationTests" />
+            <class name="com.inotex.addressbook.GroupModificationTests" />
+            <class name="com.inotex.addressbook.GroupDeletionTests" />
+        </classes>
+    </test>
+</suite>
