@@ -11,6 +11,7 @@ public class GroupDeletionTests extends TestBase{
         int before = getCountGroup();
         selectGroup();
         clickOnDeleteGroupButton();
+        //verification appearance of message
         String actualMessage = getMessage();
         Assert.assertEquals(actualMessage, expectedMessage);
         returnToGroupPage();
