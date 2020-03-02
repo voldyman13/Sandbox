@@ -64,10 +64,10 @@ public class TestBase {
     }
 
     public void returnToGroupPage() {
-        click(By.cssSelector("i a[href='group.php']"));
+        click(By.cssSelector("a[href='group.php']"));
     }
-    public void openGroupPage() {
-        click(By.cssSelector("[href='group.php']"));
+    public void openGroupPage()  {
+        click(By.cssSelector("li a[href='group.php']"));
     }
 
     public int getCountGroup() {
@@ -135,5 +135,9 @@ public class TestBase {
 
     public void editGroupName(String newGroupName) {
         type(By.name("group_name"), newGroupName);
+    }
+
+    public void initGroupCreation() {
+        click(By.name("new"));
     }
 }

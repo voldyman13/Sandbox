@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inotex.addressbook.GroupModificationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-03-01T18:56:41" hostname="Vladimir" time="0.0">
+<testsuite name="com.inotex.addressbook.GroupModificationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-03-01T20:34:15" hostname="Vladimir" time="0.001">
   <properties/>
-  <testcase name="editGroupTest" classname="com.inotex.addressbook.GroupModificationTests" time="0.0">
+  <testcase name="groupModificationTest" classname="com.inotex.addressbook.GroupModificationTests" time="0.001">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.inotex.addressbook.TestBase.click(TestBase.java:53)
 	at com.inotex.addressbook.TestBase.openGroupPage(TestBase.java:70)
-	at com.inotex.addressbook.GroupModificationTests.editGroupTest(GroupModificationTests.java:11)
+	at com.inotex.addressbook.GroupModificationTests.groupModificationTest(GroupModificationTests.java:11)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

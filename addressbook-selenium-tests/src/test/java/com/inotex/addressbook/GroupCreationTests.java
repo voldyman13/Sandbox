@@ -1,6 +1,5 @@
 package com.inotex.addressbook;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,7 +12,7 @@ public class GroupCreationTests extends TestBase{
         openGroupPage();
         int before = getCountGroup();
         initGroupCreation();
-        fillGroupForm(new Group("This is group name", "This is header", "This is comment"));
+        fillGroupForm(new Group("group name", "header", "footer"));
         submitGroupCreation();
         String actualMessage = getMessage();
         Assert.assertEquals(actualMessage, expectedrMessage);
@@ -21,10 +20,6 @@ public class GroupCreationTests extends TestBase{
         int after = getCountGroup();
         Assert.assertEquals(after, before+1);
         System.out.println("Groups before: " + before + " Groups after: " + after);
-    }
-
-    public void initGroupCreation() {
-        click(By.name("new"));
     }
 
 

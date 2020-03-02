@@ -1,9 +1,21 @@
 package com.inotex.addressbook;
 
 public class Group {
-    private final String groupName;
-    private final String groupHeader;
-    private final String groupFooter;
+    private String groupName;
+    private String groupHeader;
+    private String groupFooter;
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public void setGroupHeader(String groupHeader) {
+        this.groupHeader = groupHeader;
+    }
+
+    public void setGroupFooter(String groupFooter) {
+        this.groupFooter = groupFooter;
+    }
 
     public Group(String groupName, String groupHeader, String groupFooter) {
         this.groupName = groupName;

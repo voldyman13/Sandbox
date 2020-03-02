@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class GroupModificationTests extends TestBase{
     @Test
-    public void editGroupTest(){
+    public void groupModificationTest(){
         String expectedMessage ="Group record has been updated.\n" +
                 "return to the group page";
         openGroupPage();
