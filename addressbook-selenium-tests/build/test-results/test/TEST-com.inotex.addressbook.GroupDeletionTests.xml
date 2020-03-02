@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inotex.addressbook.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-02T08:47:00" hostname="Vladimir" time="0.827">
-  <properties/>
-  <testcase name="groupDeletionTest" classname="com.inotex.addressbook.GroupDeletionTests" time="0.827"/>
-  <system-out><![CDATA[Groups before: 7 Gruops after: 6
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -35,7 +35,7 @@ public class GroupModificationTests extends TestBase{
         String newGroupFooter = getGroupFooter();
         Assert.assertEquals(newGroupName, "New " + groupName);
         Assert.assertEquals(newGroupHeader, "Modified " + groupHeader);
-        Assert.assertEquals(newGroupFooter, "Modified " + groupFooter);
+        Assert.assertEquals(newGroupFooter, "Changed " + groupFooter);
         returnToGroupPage();
 
     }
