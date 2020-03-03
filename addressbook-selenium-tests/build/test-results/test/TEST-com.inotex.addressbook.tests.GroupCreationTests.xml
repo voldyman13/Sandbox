@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.inotex.addressbook.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-03T22:51:30" hostname="Vladimir" time="1.883">
+  <properties/>
+  <testcase name="groupCreationTest" classname="com.inotex.addressbook.tests.GroupCreationTests" time="1.883"/>
+  <system-out><![CDATA[Groups before: 3 Groups after: 4
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 2587
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1583275887.283][WARNING]: Timed out connecting to Chrome, retrying...
+Mar 04, 2020 12:51:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

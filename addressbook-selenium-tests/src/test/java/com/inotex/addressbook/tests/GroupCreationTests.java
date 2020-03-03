@@ -1,9 +1,10 @@
-package com.inotex.addressbook;
+package com.inotex.addressbook.tests;
 
+import com.inotex.addressbook.model.Group;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GroupCreationTests extends TestBase{
+public class GroupCreationTests extends TestBase {
 
     @Test
     public void groupCreationTest(){

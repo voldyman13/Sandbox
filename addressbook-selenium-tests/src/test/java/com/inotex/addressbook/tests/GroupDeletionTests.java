@@ -1,4 +1,4 @@
-package com.inotex.addressbook;
+package com.inotex.addressbook.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,7 +9,7 @@ public class GroupDeletionTests extends TestBase{
         String expectedMessage = "Group has been removed.\n"+"return to the group page";
         openGroupPage();
         int before = getCountGroup();
-        selectGroup();
+        selectGroupByIndex(0);
         clickOnDeleteGroupButton();
         //verification appearance of message
         String actualMessage = getMessage();

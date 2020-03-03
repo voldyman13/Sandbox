@@ -1,4 +1,4 @@
-package com.inotex.addressbook;
+package com.inotex.addressbook.model;
 
 public class Group {
     private String groupName;

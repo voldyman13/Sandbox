@@ -1,27 +1,28 @@
-package com.inotex.addressbook;
+package com.inotex.addressbook.tests;
 
+import com.inotex.addressbook.model.Group;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     WebDriver driver;
 
-    @BeforeSuite
+    @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    //    driver.manage().window().maximize();
         driver.get("http://localhost/addressbook");
         login("admin", "secret");
     }
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         driver.quit();
     }
 
@@ -38,9 +39,9 @@ public class TestBase {
     public String getText(By locator) {
         return driver.findElement(locator).getText();
     }
-
-
-
+    public void selectGroupByIndex(int index) {
+        driver.findElements(By.name("selected[]")).get(index).click();
+    }
     public String getUrl() {
         return driver.getCurrentUrl();
     }
@@ -59,9 +60,10 @@ public class TestBase {
         driver.findElement(locator).sendKeys(text);
     }
 
-    public void selectGroup() {
-        click(By.xpath("//span[1]//input[1]"));
-    }
+//    public void selectGroup(int index) {
+//        driver.findElements(By.cssSelector("form > span.group")).get(index).click();
+//       click(By.xpath("//span[1]//input[1]"));
+//    }
 
     public void returnToGroupPage() {
         click(By.cssSelector("a[href='group.php']"));
@@ -96,8 +98,8 @@ public class TestBase {
         click(By.cssSelector("[href='./']"));
     }
 
-    public String getFirstGroupName() {
-        return getText(By.xpath("//span[1][@class='group']"));
+    public String getGroupNameByIndex(int index) {
+        return driver.findElements(By.cssSelector("form > span.group")).get(index).getText();
     }
 
     public String getMessageText() {
@@ -121,7 +123,7 @@ public class TestBase {
 
     }
 
-    public void ClickOnEditButton() {
+    public void clickOnEditButton() {
         click(By.name("edit"));
     }
 

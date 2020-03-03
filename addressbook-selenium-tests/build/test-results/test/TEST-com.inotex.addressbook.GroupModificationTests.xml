@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inotex.addressbook.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-02T09:28:34" hostname="Vladimir" time="3.051">
-  <properties/>
-  <testcase name="groupModificationTest" classname="com.inotex.addressbook.GroupModificationTests" time="3.051"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
