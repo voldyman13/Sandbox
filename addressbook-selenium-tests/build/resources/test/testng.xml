@@ -6,6 +6,7 @@
             <class name="com.inotex.addressbook.tests.GroupCreationTests" />
             <class name="com.inotex.addressbook.tests.GroupModificationTests" />
             <class name="com.inotex.addressbook.tests.GroupDeletionTests" />
+            <class name="com.inotex.addressbook.tests.ContactCreationTest" />
         </classes>
     </test>
 </suite>

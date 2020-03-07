@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class GroupModificationTests extends TestBase{
     @Test
     public void groupModificationTest(){
+        System.out.println("groupModificationTests started...");
         String expectedMessage ="Group record has been updated.\n" + "return to the group page";
         openGroupPage();
         int before = getCountGroup();
@@ -29,15 +30,14 @@ public class GroupModificationTests extends TestBase{
         //verification appearance of message
         String actualMessage = getMessageText();
         Assert.assertEquals(actualMessage, expectedMessage);
+        System.out.println(" the message is displayed");
         returnToGroupPage();
         //Checking for the Group Name Changing on the Group page
-        System.out.println("Groups now:");
-        printGroups(before);
+     //   printGroups(before);
         int last = before-1;
-        System.out.println("Choise Group#"+last);
-        printGroupByIndex(last);
-        System.out.println("Verificate: " + getGroupNameByIndex(last)+" & "+mod+groupName);
+      //  printGroupByIndex(last);
         Assert.assertEquals(getGroupNameByIndex(last), mod + groupName);
+        System.out.println("the changed group name on the group page is displayed correctly");
         selectGroupByIndex(last);
         clickOnEditButton();
         //Getting and checking changed values
@@ -48,14 +48,6 @@ public class GroupModificationTests extends TestBase{
         Assert.assertEquals(newGroupHeader, mod+ groupHeader);
         Assert.assertEquals(newGroupFooter, mod+ groupFooter);
         returnToGroupPage();
-    }
-    public void printGroups(int lenght){
-        for(int i=0; i<lenght; i++){
-            System.out.println(i+": "+ getGroupNameByIndex(i));
-        }
-    }
-    public void printGroupByIndex(int index){
-        System.out.println("choise "+index+": "+ getGroupNameByIndex(index));
-
+        System.out.println("groupModificationTests finished...");
     }
 }

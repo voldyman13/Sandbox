@@ -5,22 +5,21 @@ public class Group {
     private String groupHeader;
     private String groupFooter;
 
-    public void setGroupName(String groupName) {
+    public Group setGroupName(String groupName) {
         this.groupName = groupName;
+        return this;
     }
 
-    public void setGroupHeader(String groupHeader) {
+    public Group setGroupHeader(String groupHeader) {
         this.groupHeader = groupHeader;
+        return this;
+
     }
 
-    public void setGroupFooter(String groupFooter) {
+    public Group setGroupFooter(String groupFooter) {
         this.groupFooter = groupFooter;
-    }
+        return this;
 
-    public Group(String groupName, String groupHeader, String groupFooter) {
-        this.groupName = groupName;
-        this.groupHeader = groupHeader;
-        this.groupFooter = groupFooter;
     }
 
     public String getGroupName() {

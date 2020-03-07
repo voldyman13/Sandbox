@@ -94,7 +94,7 @@ public class TestBase {
         click(By.name("delete"));
     }
 
-    public void goHome() {
+    public void returnToHomePage() {
         click(By.cssSelector("[href='./']"));
     }
 
@@ -141,5 +141,16 @@ public class TestBase {
 
     public void initGroupCreation() {
         click(By.name("new"));
+    }
+
+    public void printGroups(int lenght){
+        for(int i=0; i<lenght; i++){
+            System.out.println(i+": "+ getGroupNameByIndex(i));
+        }
+    }
+
+    public void printGroupByIndex(int index){
+        System.out.println("choise "+index+": "+ getGroupNameByIndex(index));
+
     }
 }
