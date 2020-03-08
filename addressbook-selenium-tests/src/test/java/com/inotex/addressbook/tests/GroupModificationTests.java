@@ -10,19 +10,14 @@ public class GroupModificationTests extends TestBase{
         System.out.println("groupModificationTests started...");
         String expectedMessage ="Group record has been updated.\n" + "return to the group page";
         openGroupPage();
-        int before = getCountGroup();
-        System.out.println("Groups");
-        printGroups(before);
         selectGroupByIndex(0);
-        System.out.println("Choise Group #"+ 0);
-        printGroupByIndex(0);
         clickOnEditButton();
         //Saving old value of fields
         String groupName = getGroupName();
         String groupHeader = getGroupHeader();
         String groupFooter = getGroupFooter();
         //Changing value
-        String mod = "M"+ +System.currentTimeMillis()/1000+" ";
+        String mod = ""+ System.currentTimeMillis()/1000+"";
         editGroupName(mod+groupName);
         editGroupHeader(mod+groupHeader);
         editGroupFooter(mod+groupFooter);
@@ -33,12 +28,9 @@ public class GroupModificationTests extends TestBase{
         System.out.println(" the message is displayed");
         returnToGroupPage();
         //Checking for the Group Name Changing on the Group page
-     //   printGroups(before);
-        int last = before-1;
-      //  printGroupByIndex(last);
-        Assert.assertEquals(getGroupNameByIndex(last), mod + groupName);
+        Assert.assertEquals(getGroupNameMod(mod), mod + groupName);
         System.out.println("the changed group name on the group page is displayed correctly");
-        selectGroupByIndex(last);
+        selectGroupByMod(mod);
         clickOnEditButton();
         //Getting and checking changed values
         String newGroupName = getGroupName();
@@ -50,4 +42,5 @@ public class GroupModificationTests extends TestBase{
         returnToGroupPage();
         System.out.println("groupModificationTests finished...");
     }
+
 }

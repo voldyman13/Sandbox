@@ -4,12 +4,25 @@ import com.inotex.addressbook.model.Group;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 
+import java.io.File;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     WebDriver driver;
+
+    public static int getRandomNumber(int first, int last) {
+        Random rd = new Random();
+        int number = first-1;
+        while (number <= first-1) {
+            number = rd.nextInt(last-first-1);
+        }
+        System.out.println("Random number: "+number);
+        return number;
+    }
 
     @BeforeClass
     public void setUp() {
@@ -74,6 +87,9 @@ public class TestBase {
 
     public int getCountGroup() {
         return elementCounter(By.className("group"));
+    }
+    public int getCountContacts() {
+        return elementCounter(By.name("selected[]"));
     }
 
     public void fillGroupForm(Group group) {
@@ -152,5 +168,87 @@ public class TestBase {
     public void printGroupByIndex(int index){
         System.out.println("choise "+index+": "+ getGroupNameByIndex(index));
 
+    }
+
+    public String getGroupNameMod(String mod) {
+        return  driver.findElement(By.xpath("//span[contains(text(),'"+mod+"')]")).getText();
+    }
+
+    public void selectGroupByMod(String mod) {
+        driver.findElement(By.xpath("//span[contains(text(),'"+mod+"')]/input")).click();
+    }
+
+    public int getCountContact() {
+        return elementCounter(By.name("selected[]"));
+    }
+
+    public void submitContact() {
+        click(By.cssSelector("[name='submit']:nth-child(1)"));
+    }
+
+    public void choiceGroup() {
+        Select group = new Select(driver.findElement(By.name("new_group")));
+        group.selectByIndex(1);
+    }
+
+    public void attachPhoto() {
+        attach((By.name("photo")), new File("src/test/resources/Photo.jpg"));
+    }
+
+    public void attach(By locator, File file) {
+        driver.findElement(locator).sendKeys(file.getAbsolutePath());
+    }
+
+    public void fillBdayAndAnniversary() {
+        Select day = new Select(driver.findElement(By.name("bday")));
+        int bday=getRandomNumber(1,28);
+        day.selectByIndex(bday);
+        Select month = new Select(driver.findElement(By.name("bmonth")));
+        int bmonth = getRandomNumber(1,12);
+        month.selectByIndex(bmonth);
+        int byear = 2020-getRandomNumber(1, 100);
+        type(By.name("byear"), ""+byear);
+        System.out.println("Birsday: "+bday+" - "+bmonth+" - "+byear);
+        Select aday = new Select(driver.findElement(By.name("aday")));
+        aday.selectByIndex(bday);
+        Select amonth = new Select(driver.findElement(By.name("amonth")));
+        amonth.selectByIndex(bmonth);
+        int ayear = byear+((2020-byear)/10+1)*10;
+        type(By.name("ayear"), ""+ayear);
+        System.out.println("Anniversary: "+bday+" - "+bmonth+" - "+ayear);
+    }
+
+    public void openAddNewPage() {
+        click(By.cssSelector("[href='edit.php']"));
+    }
+
+    public void fillContactFields(int before, String firstName, String middleName, String lastName,
+                                  String nickName, String title, String company, String address,
+                                  String homePhone, String mobilePhone, String workPhone,
+                                  String fax, String email, String email2, String email3,
+                                  String homePage, String address2, String homePhone2,
+                                  String notes) {
+        String num = "#"+ before+"_";
+        type(By.name("firstname"), num+firstName);
+        type(By.name("middlename"), num+middleName);
+        type(By.name("lastname"), num+lastName);
+        type(By.name("nickname"), num+nickName);
+        attachPhoto();
+        type(By.name("title"), num+title);
+        type(By.name("company"), num+company);
+        type(By.name("address"), num+address);
+        type(By.name("home"), num+homePhone);
+        type(By.name("mobile"), num+mobilePhone);
+        type(By.name("work"), num+workPhone);
+        type(By.name("fax"), num+fax);
+        type(By.name("email"), num+email);
+        type(By.name("email2"), num+email2);
+        type(By.name("email3"), num+email3);
+        type(By.name("homepage"), num+homePage);
+        fillBdayAndAnniversary();
+        choiceGroup();
+        type(By.name("address2"), num+address2);
+        type(By.name("phone2"), num+homePhone2);
+        type(By.name("notes"), num+notes);
     }
 }
