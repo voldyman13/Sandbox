@@ -1,5 +1,6 @@
 package com.inotex.addressbook.tests;
 
+import com.inotex.addressbook.model.Contact;
 import com.inotex.addressbook.model.Group;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -222,33 +223,40 @@ public class TestBase {
         click(By.cssSelector("[href='edit.php']"));
     }
 
-    public void fillContactFields(int before, String firstName, String middleName, String lastName,
-                                  String nickName, String title, String company, String address,
-                                  String homePhone, String mobilePhone, String workPhone,
-                                  String fax, String email, String email2, String email3,
-                                  String homePage, String address2, String homePhone2,
-                                  String notes) {
-        String num = "#"+ before+"_";
-        type(By.name("firstname"), num+firstName);
-        type(By.name("middlename"), num+middleName);
-        type(By.name("lastname"), num+lastName);
-        type(By.name("nickname"), num+nickName);
+    public void fillContactFields(Contact contact, int before) {
+        String num = "#"+ before +"_";
+        type(By.name("firstname"), num+ contact.getFirstName());
+        type(By.name("middlename"), num+ contact.getMiddleName());
+        type(By.name("lastname"), num+ contact.getLastName());
+        type(By.name("nickname"), num+ contact.getNickName());
         attachPhoto();
-        type(By.name("title"), num+title);
-        type(By.name("company"), num+company);
-        type(By.name("address"), num+address);
-        type(By.name("home"), num+homePhone);
-        type(By.name("mobile"), num+mobilePhone);
-        type(By.name("work"), num+workPhone);
-        type(By.name("fax"), num+fax);
-        type(By.name("email"), num+email);
-        type(By.name("email2"), num+email2);
-        type(By.name("email3"), num+email3);
-        type(By.name("homepage"), num+homePage);
+        type(By.name("title"), num+ contact.getTitle());
+        type(By.name("company"), num+ contact.getCompany());
+        type(By.name("address"), num+ contact.getAddress());
+        type(By.name("home"), num+ contact.getHomePhone());
+        type(By.name("mobile"), num+ contact.getMobilePhone());
+        type(By.name("work"), num+ contact.getWorkPhone());
+        type(By.name("fax"), num+ contact.getFax());
+        type(By.name("email"), num+ contact.getEmail());
+        type(By.name("email2"), num+ contact.getEmail2());
+        type(By.name("email3"), num+ contact.getEmail3());
+        type(By.name("homepage"), num+ contact.getHomePage());
         fillBdayAndAnniversary();
         choiceGroup();
-        type(By.name("address2"), num+address2);
-        type(By.name("phone2"), num+homePhone2);
-        type(By.name("notes"), num+notes);
+        type(By.name("address2"), num+ contact.getAddress2());
+        type(By.name("phone2"), num+ contact.getHomePhone2());
+        type(By.name("notes"), num+ contact.getNotes());
+    }
+
+    public void deleteContact() {
+      click(By.xpath("//form[2]//input[2]"));
+    }
+
+    public void clickOnPencilImg() {
+        click(By.cssSelector("a img[title='Edit']"));
+    }
+
+    public void selectContactByIndex(int index) {
+        driver.findElements(By.name("selected[]")).get(index).click();
     }
 }

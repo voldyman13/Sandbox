@@ -1,5 +1,6 @@
 package com.inotex.addressbook.tests;
 
+import com.inotex.addressbook.model.Contact;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,11 +13,10 @@ public class ContactCreationTest extends TestBase{
                 "add next or return to home page.";
         int before = getCountContact();
         openAddNewPage();
-        fillContactFields(before+1,"firstName", "middleName", "lastname",
-                "nickname", "title", "company", "address",
-                "homePhone", "mobilePhone", "workPhone",
-                "fax", "email", "email2", "email3", "homePage",
-                "address2", "homePhone2", "notes");
+        fillContactFields(new Contact( "firstName", "middleName", "lastname",
+                "nickname", "title", "company", "address", "homePhone",
+                "mobilePhone", "workPhone", "fax", "email", "email2",
+                "email3", "homePage", "address2", "homePhone2", "notes"), before + 1);
         submitContact();
         //verification appearance of message
         String actualMessage = getMessage();

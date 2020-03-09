@@ -1,6 +1,5 @@
 package com.inotex.addressbook.tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -27,15 +26,4 @@ public class ContactDeletionTest extends TestBase{
         System.out.println("contactDeletionTest finished...");
    }
 
-    public void deleteContact() {
-      click(By.xpath("//form[2]//input[2]"));
-    }
-
-    public void clickOnPencilImg() {
-        click(By.cssSelector("a img[title='Edit']"));
-    }
-
-    public void selectContactByIndex(int index) {
-        driver.findElements(By.name("selected[]")).get(index).click();
-    }
 }
