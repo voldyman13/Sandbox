@@ -14,8 +14,8 @@ public class ContactDeletionTest extends TestBase{
                     "contactDeletionTest finished...");
             return;
         }
-        selectContactByIndex(before-1);
-        clickOnPencilImg();
+//        selectContactByIndex(before-1);
+        clickOnPencilImg(before-1);
         deleteContact();
         String actualMessage = getMessage();
         Assert.assertEquals(actualMessage, expectedMessage);

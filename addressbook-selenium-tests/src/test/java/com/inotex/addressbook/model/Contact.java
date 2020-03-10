@@ -1,5 +1,7 @@
 package com.inotex.addressbook.model;
 
+import org.openqa.selenium.By;
+
 public class Contact {
     private  String firstName;
     private  String middleName;
@@ -16,30 +18,86 @@ public class Contact {
     private  String email2;
     private  String email3;
     private  String homePage;
+    private String bday;
+    private String bmonth;
+    private String byear;
+    private String aday;
+    private String amonth;
+    private String ayear;
     private  String address2;
     private  String homePhone2;
     private  String notes;
 
-    public Contact(String firstName, String middleName, String lastName, String nickName, String title, String company, String address, String homePhone, String mobilePhone, String workPhone, String fax, String email, String email2, String email3, String homePage, String address2, String homePhone2, String notes) {
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.nickName = nickName;
-        this.title = title;
-        this.company = company;
-        this.address = address;
-        this.homePhone = homePhone;
-        this.mobilePhone = mobilePhone;
-        this.workPhone = workPhone;
-        this.fax = fax;
-        this.email = email;
-        this.email2 = email2;
-        this.email3 = email3;
-        this.homePage = homePage;
-        this.address2 = address2;
-        this.homePhone2 = homePhone2;
-        this.notes = notes;
+
+    public String getBday() {
+        return bday;
     }
+
+    public void setBday(String bday) {
+        this.bday = bday;
+    }
+
+    public String getBmonth() {
+        return bmonth;
+    }
+
+    public void setBmonth(String bmonth) {
+        this.bmonth = bmonth;
+    }
+
+    public String getByear() {
+        return byear;
+    }
+
+    public void setByear(String byear) {
+        this.byear = byear;
+    }
+
+    public String getAday() {
+        return aday;
+    }
+
+    public void setAday(String aday) {
+        this.aday = aday;
+    }
+
+    public String getAmonth() {
+        return amonth;
+    }
+
+    public void setAmonth(String amonth) {
+        this.amonth = amonth;
+    }
+
+    public String getAyear() {
+        return ayear;
+    }
+
+    public void setAyear(String ayear) {
+        this.ayear = ayear;
+    }
+
+
+//    public Contact(String firstName, String middleName, String lastName, String nickName, String title, String company, String address, String homePhone, String mobilePhone, String workPhone, String fax, String email, String email2, String email3, String homePage, String address2, String homePhone2, String notes) {
+//        this.firstName = firstName;
+//        this.middleName = middleName;
+//        this.lastName = lastName;
+//        this.nickName = nickName;
+//        this.title = title;
+//        this.company = company;
+//        this.address = address;
+//        this.homePhone = homePhone;
+//        this.mobilePhone = mobilePhone;
+//        this.workPhone = workPhone;
+//        this.fax = fax;
+//        this.email = email;
+//        this.email2 = email2;
+//        this.email3 = email3;
+//        this.homePage = homePage;
+//        this.address2 = address2;
+//        this.homePhone2 = homePhone2;
+//        this.notes = notes;
+//    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -184,4 +242,34 @@ public class Contact {
     public String getNotes() {
         return notes;
     }
+
+    @Override
+    public String toString() {
+        return "Contact:\n" +
+        "firstName: "+firstName+"\n"+
+        "middleName: "+middleName+"\n"+
+        "lastName: "+ lastName+"\n"+
+        "nickName: " + nickName+"\n"+
+        "title: " + title+"\n"+
+        "company: " + company+"\n"+
+        "address: " + address+"\n"+
+        "homePhone: " + homePhone+"\n"+
+        "mobilePhone: " + mobilePhone+"\n"+
+        "workPhone: " + workPhone+"\n"+
+        "fax: " + fax+"\n"+
+        "email: " + email+"\n"+
+        "email2: " + email2+"\n"+
+        "email3: " + email3+"\n"+
+        "homePage: " + homePage +"\n"+
+        "bday: " + bday +"\n"+
+        "bmonth: " + bmonth +"\n"+
+        "byear: " + byear +"\n"+
+        "aday: " + aday +"\n"+
+        "amonth: " + amonth +"\n"+
+        "ayear: " + ayear +"\n"+
+        "address2: " + address2 +"\n" +
+        "homePhone2: " + homePhone2 +"\n" +
+        "notes: " + notes +"\n";
+    }
+
 }

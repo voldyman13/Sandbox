@@ -21,7 +21,7 @@ public class TestBase {
         while (number <= first-1) {
             number = rd.nextInt(last-first-1);
         }
-        System.out.println("Random number: "+number);
+
         return number;
     }
 
@@ -187,7 +187,7 @@ public class TestBase {
         click(By.cssSelector("[name='submit']:nth-child(1)"));
     }
 
-    public void choiceGroup() {
+    public void selectGroup() {
         Select group = new Select(driver.findElement(By.name("new_group")));
         group.selectByIndex(1);
     }
@@ -202,13 +202,13 @@ public class TestBase {
 
     public void fillBdayAndAnniversary() {
         Select day = new Select(driver.findElement(By.name("bday")));
-        int bday=getRandomNumber(1,28);
+        int bday = getRandomNumber(1,28);
         day.selectByIndex(bday);
         Select month = new Select(driver.findElement(By.name("bmonth")));
         int bmonth = getRandomNumber(1,12);
         month.selectByIndex(bmonth);
         int byear = 2020-getRandomNumber(1, 100);
-        type(By.name("byear"), ""+byear);
+        type(By.name("byear"), byear+"");
         System.out.println("Birsday: "+bday+" - "+bmonth+" - "+byear);
         Select aday = new Select(driver.findElement(By.name("aday")));
         aday.selectByIndex(bday);
@@ -223,7 +223,7 @@ public class TestBase {
         click(By.cssSelector("[href='edit.php']"));
     }
 
-    public void fillContactFields(Contact contact, int before) {
+    public void fillContactData(Contact contact, int before) {
         String num = "#"+ before +"_";
         type(By.name("firstname"), num+ contact.getFirstName());
         type(By.name("middlename"), num+ contact.getMiddleName());
@@ -242,7 +242,7 @@ public class TestBase {
         type(By.name("email3"), num+ contact.getEmail3());
         type(By.name("homepage"), num+ contact.getHomePage());
         fillBdayAndAnniversary();
-        choiceGroup();
+        selectGroup();
         type(By.name("address2"), num+ contact.getAddress2());
         type(By.name("phone2"), num+ contact.getHomePhone2());
         type(By.name("notes"), num+ contact.getNotes());
@@ -252,11 +252,12 @@ public class TestBase {
       click(By.xpath("//form[2]//input[2]"));
     }
 
-    public void clickOnPencilImg() {
-        click(By.cssSelector("a img[title='Edit']"));
+    public void clickOnPencilImg(int index) {
+        driver.findElements(By.cssSelector("a img[title='Edit']")).get(index).click();
     }
 
     public void selectContactByIndex(int index) {
         driver.findElements(By.name("selected[]")).get(index).click();
     }
 }
+
