@@ -203,17 +203,17 @@ public class TestBase {
     public void fillBdayAndAnniversary() {
         Select day = new Select(driver.findElement(By.name("bday")));
         int bday = getRandomNumber(1,28);
-        day.selectByIndex(bday);
+        day.selectByIndex(bday+1);
         Select month = new Select(driver.findElement(By.name("bmonth")));
         int bmonth = getRandomNumber(1,12);
-        month.selectByIndex(bmonth);
+        month.selectByIndex(bmonth+1);
         int byear = 2020-getRandomNumber(1, 100);
         type(By.name("byear"), byear+"");
         System.out.println("Birsday: "+bday+" - "+bmonth+" - "+byear);
         Select aday = new Select(driver.findElement(By.name("aday")));
-        aday.selectByIndex(bday);
+        aday.selectByIndex(bday+1);
         Select amonth = new Select(driver.findElement(By.name("amonth")));
-        amonth.selectByIndex(bmonth);
+        amonth.selectByIndex(bmonth+1);
         int ayear = byear+((2020-byear)/10+1)*10;
         type(By.name("ayear"), ""+ayear);
         System.out.println("Anniversary: "+bday+" - "+bmonth+" - "+ayear);

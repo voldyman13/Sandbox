@@ -92,9 +92,4 @@ public class ContactModificationTest extends TestBase{
     public String getValue(By locator){
         return driver.findElement(locator).getAttribute("value");
     }
-
-    public void selectFirstContactForEdit() {
-        click(By.xpath("//tr[2]//td[8]//a[1]//img[1]"));
-    }
-
 }
