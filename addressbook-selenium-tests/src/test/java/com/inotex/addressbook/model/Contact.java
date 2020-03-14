@@ -1,82 +1,60 @@
 package com.inotex.addressbook.model;
 
-import org.openqa.selenium.By;
-
 public class Contact {
-    private  String firstName;
-    private  String middleName;
-    private  String lastName;
-    private  String nickName;
-    private  String title;
-    private  String company;
-    private  String address;
-    private  String homePhone;
-    private  String mobilePhone;
-    private  String workPhone;
-    private  String fax;
-    private  String email;
-    private  String email2;
-    private  String email3;
-    private  String homePage;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String nickName;
+    private String fileIndeficator;
+    private String title;
+    private String company;
+    private String address;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
+    private String fax;
+    private String email;
+    private String email2;
+    private String email3;
+    private String homePage;
     private String bday;
     private String bmonth;
     private String byear;
     private String aday;
     private String amonth;
     private String ayear;
-    private  String address2;
-    private  String homePhone2;
-    private  String notes;
+    private String address2;
+    private String homePhone2;
+    private String notes;
 
 
     public String getBday() {
         return bday;
     }
 
-    public void setBday(String bday) {
-        this.bday = bday;
-    }
+    public String getFileIndeficator() { return fileIndeficator; }
+
 
     public String getBmonth() {
         return bmonth;
-    }
-
-    public void setBmonth(String bmonth) {
-        this.bmonth = bmonth;
     }
 
     public String getByear() {
         return byear;
     }
 
-    public void setByear(String byear) {
-        this.byear = byear;
-    }
-
     public String getAday() {
         return aday;
     }
 
-    public void setAday(String aday) {
-        this.aday = aday;
-    }
 
     public String getAmonth() {
         return amonth;
     }
 
-    public void setAmonth(String amonth) {
-        this.amonth = amonth;
-    }
-
     public String getAyear() {
         return ayear;
     }
-
-    public void setAyear(String ayear) {
-        this.ayear = ayear;
-    }
-
 
 //    public Contact(String firstName, String middleName, String lastName, String nickName, String title, String company, String address, String homePhone, String mobilePhone, String workPhone, String fax, String email, String email2, String email3, String homePage, String address2, String homePhone2, String notes) {
 //        this.firstName = firstName;
@@ -99,77 +77,130 @@ public class Contact {
 //        this.notes = notes;
 //    }
 
-    public void setFirstName(String firstName) {
+    public Contact setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
+
+    }public Contact setFileIndeficator(String firstName) {
+        this.fileIndeficator = firstName;
+        return this;
     }
 
-    public void setMiddleName(String middleName) {
+    public Contact setMiddleName(String middleName) {
         this.middleName = middleName;
+        return this;
     }
 
-    public void setLastName(String lastName) {
+    public Contact setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
+
     }
 
-    public void setNickName(String nickName) {
+    public Contact setNickName(String nickName) {
         this.nickName = nickName;
+        return this;
     }
 
-    public void setTitle(String title) {
+    public Contact setTitle(String title) {
         this.title = title;
+        return this;
     }
 
-    public void setCompany(String company) {
+    public Contact setCompany(String company) {
         this.company = company;
+        return this;
     }
 
-    public void setAddress(String address) {
+    public Contact setAddress(String address) {
         this.address = address;
+        return this;
     }
 
-    public void setHomePhone(String homePhone) {
+    public Contact setHomePhone(String homePhone) {
         this.homePhone = homePhone;
+        return this;
     }
 
-    public void setMobilePhone(String mobilePhone) {
+    public Contact setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
+        return this;
     }
 
-    public void setWorkPhone(String workPhone) {
+    public Contact setWorkPhone(String workPhone) {
         this.workPhone = workPhone;
+        return this;
     }
 
-    public void setFax(String fax) {
+    public Contact setFax(String fax) {
         this.fax = fax;
+        return this;
     }
 
-    public void setEmail(String email) {
+    public Contact setEmail(String email) {
         this.email = email;
+        return this;
     }
 
-    public void setEmail2(String email2) {
+    public Contact setEmail2(String email2) {
         this.email2 = email2;
+        return this;
     }
 
-    public void setEmail3(String email3) {
+    public Contact setEmail3(String email3) {
         this.email3 = email3;
+        return this;
     }
 
-    public void setHomePage(String homePage) {
+    public Contact setHomePage(String homePage) {
         this.homePage = homePage;
+        return this;
     }
 
-    public void setAddress2(String address2) {
+    public Contact setAddress2(String address2) {
         this.address2 = address2;
+        return this;
     }
 
-    public void setHomePhone2(String homePhone2) {
+    public Contact setHomePhone2(String homePhone2) {
         this.homePhone2 = homePhone2;
+        return this;
     }
 
-    public void setNotes(String notes) {
+    public Contact setNotes(String notes) {
         this.notes = notes;
+        return this;
     }
+    public Contact setBday(String bday) {
+        this.bday = bday;
+        return this;
+    }
+
+    public Contact setBmonth(String bmonth) {
+        this.bmonth = bmonth;
+        return this;
+    }
+
+    public Contact setByear(String byear) {
+        this.byear = byear;
+        return this;
+    }
+    public Contact setAday(String aday) {
+        this.aday = aday;
+        return this;
+    }
+
+    public Contact setAmonth(String amonth) {
+        this.amonth = amonth;
+        return this;
+    }
+
+    public Contact setAyear(String ayear) {
+        this.ayear = ayear;
+        return this;
+    }
+
+
 
     public String getFirstName() {
         return firstName;
@@ -246,30 +277,30 @@ public class Contact {
     @Override
     public String toString() {
         return "Contact:\n" +
-        "firstName: "+firstName+"\n"+
-        "middleName: "+middleName+"\n"+
-        "lastName: "+ lastName+"\n"+
-        "nickName: " + nickName+"\n"+
-        "title: " + title+"\n"+
-        "company: " + company+"\n"+
-        "address: " + address+"\n"+
-        "homePhone: " + homePhone+"\n"+
-        "mobilePhone: " + mobilePhone+"\n"+
-        "workPhone: " + workPhone+"\n"+
-        "fax: " + fax+"\n"+
-        "email: " + email+"\n"+
-        "email2: " + email2+"\n"+
-        "email3: " + email3+"\n"+
-        "homePage: " + homePage +"\n"+
-        "bday: " + bday +"\n"+
-        "bmonth: " + bmonth +"\n"+
-        "byear: " + byear +"\n"+
-        "aday: " + aday +"\n"+
-        "amonth: " + amonth +"\n"+
-        "ayear: " + ayear +"\n"+
-        "address2: " + address2 +"\n" +
-        "homePhone2: " + homePhone2 +"\n" +
-        "notes: " + notes +"\n";
+                "firstName: " + firstName + "\n" +
+                "middleName: " + middleName + "\n" +
+                "lastName: " + lastName + "\n" +
+                "nickName: " + nickName + "\n" +
+                "title: " + title + "\n" +
+                "company: " + company + "\n" +
+                "address: " + address + "\n" +
+                "homePhone: " + homePhone + "\n" +
+                "mobilePhone: " + mobilePhone + "\n" +
+                "workPhone: " + workPhone + "\n" +
+                "fax: " + fax + "\n" +
+                "email: " + email + "\n" +
+                "email2: " + email2 + "\n" +
+                "email3: " + email3 + "\n" +
+                "homePage: " + homePage + "\n" +
+                "bday: " + bday + "\n" +
+                "bmonth: " + bmonth + "\n" +
+                "byear: " + byear + "\n" +
+                "aday: " + aday + "\n" +
+                "amonth: " + amonth + "\n" +
+                "ayear: " + ayear + "\n" +
+                "address2: " + address2 + "\n" +
+                "homePhone2: " + homePhone2 + "\n" +
+                "notes: " + notes + "\n";
     }
 
 }

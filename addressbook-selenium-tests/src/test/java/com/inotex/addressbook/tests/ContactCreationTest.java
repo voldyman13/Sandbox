@@ -1,49 +1,41 @@
 package com.inotex.addressbook.tests;
 
 import com.inotex.addressbook.model.Contact;
+import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ContactCreationTest extends TestBase{
+    @BeforeMethod
+    public void preconditions(){
+        if(!app.isElementPresent(By.name("searchstring"))){
+            app.returnToHomePage();
+        }
+    }
 
     @Test
     public void contactCreationTest(){
         System.out.println("contactCreationTest started...");
         String expectedMessage = "Information entered into address book.\n" +
                 "add next or return to home page.";
-        int before = getCountContact();
-        openAddNewPage();
-        Contact contact =new Contact();
-        contact.setFirstName("firstName");
-        contact.setMiddleName("middleName");
-        contact.setLastName("lastname");
-        contact.setNickName("nickname");
-        contact.setTitle("title");
-        contact.setCompany("company");
-        contact.setAddress("address");
-        contact.setHomePhone("homePhone");
-        contact.setMobilePhone("mobilePhone");
-        contact.setWorkPhone("workPhone");
-        contact.setFax("fax");
-        contact.setEmail("email");
-        contact.setEmail2("email2");
-        contact.setEmail3("email3");
-        contact.setHomePage("homePage");
-        contact.setNotes("notes");
-        contact.setAddress2("address2");
-        contact.setHomePhone2("homePhone2");
-        fillContactData(contact  , before + 1);
-        submitContact();
+        int before = app.getCountContact();
+        app.openAddNewPage();
+        app.fillContactData(new Contact().setFirstName("firstName").setMiddleName("middleName").setLastName("lastname")
+                .setNickName("nickname").setTitle("title").setCompany("company").setAddress("address")
+                .setHomePhone("homePhone").setMobilePhone("mobilePhone").setWorkPhone("workPhone")
+                .setFax("fax").setEmail("email").setEmail2("email2").setEmail3("email3").setHomePage("homePage")
+                .setNotes("notes").setAddress2("address2").setHomePhone2("homePhone2")  , before + 1);
+        app.attachPhoto("src/test/resources/Photo.jpg");
+        app.submitContact();
         //verification appearance of message
-        String actualMessage = getMessage();
+        String actualMessage = app.getMessage();
         Assert.assertEquals(actualMessage, expectedMessage);
         System.out.println("the message is displayed");
-        returnToHomePage();
-        System.out.println(contact);
-        int after = getCountContact();
+        app.returnToHomePage();
+        int after = app.getCountContact();
         System.out.println("contacts before: " + before + " - contacts after: " + after);
         Assert.assertEquals(after,before+1);
         System.out.println("ContactCreationTests finished");
     }
-
 }

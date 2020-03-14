@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.inotex.addressbook.tests.ContactCreationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-11T09:23:00" hostname="Vladimir" time="8.025">
+  <properties/>
+  <testcase name="contactCreationTest" classname="com.inotex.addressbook.tests.ContactCreationTest" time="8.025"/>
+  <system-out><![CDATA[contactCreationTest started...
+Birsday: 19 - 2 - 1969
+Anniversary: 19 - 2 - 2029
+the message is displayed
+contacts before: 7 - contacts after: 8
+ContactCreationTests finished
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 37881
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1583918576.999][WARNING]: Timed out connecting to Chrome, retrying...
+Mar 11, 2020 11:22:59 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

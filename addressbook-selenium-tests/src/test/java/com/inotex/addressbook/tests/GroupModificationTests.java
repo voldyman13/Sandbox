@@ -9,37 +9,37 @@ public class GroupModificationTests extends TestBase{
     public void groupModificationTest(){
         System.out.println("groupModificationTests started...");
         String expectedMessage ="Group record has been updated.\n" + "return to the group page";
-        openGroupPage();
-        selectGroupByIndex(0);
-        clickOnEditButton();
+        app.openGroupPage();
+        app.selectGroupByIndex(0);
+        app.clickOnEditButton();
         //Saving old value of fields
-        String groupName = getGroupName();
-        String groupHeader = getGroupHeader();
-        String groupFooter = getGroupFooter();
+        String groupName = app.getGroupName();
+        String groupHeader = app.getGroupHeader();
+        String groupFooter = app.getGroupFooter();
         //Changing value
         String mod = ""+ System.currentTimeMillis()/1000+"";
-        editGroupName(mod+groupName);
-        editGroupHeader(mod+groupHeader);
-        editGroupFooter(mod+groupFooter);
-        submitModification();
+        app.editGroupName(mod+groupName);
+        app.editGroupHeader(mod+groupHeader);
+        app.editGroupFooter(mod+groupFooter);
+        app.submitModification();
         //verification appearance of message
-        String actualMessage = getMessageText();
+        String actualMessage = app.getMessageText();
         Assert.assertEquals(actualMessage, expectedMessage);
         System.out.println(" the message is displayed");
-        returnToGroupPage();
+        app.returnToGroupPage();
         //Checking for the Group Name Changing on the Group page
-        Assert.assertEquals(getGroupNameMod(mod), mod + groupName);
+        Assert.assertEquals(app.getGroupNameMod(mod), mod + groupName);
         System.out.println("the changed group name on the group page is displayed correctly");
-        selectGroupByMod(mod);
-        clickOnEditButton();
+        app.selectGroupByMod(mod);
+        app.clickOnEditButton();
         //Getting and checking changed values
-        String newGroupName = getGroupName();
-        String newGroupHeader = getGroupHeader();
-        String newGroupFooter = getGroupFooter();
+        String newGroupName = app.getGroupName();
+        String newGroupHeader = app.getGroupHeader();
+        String newGroupFooter = app.getGroupFooter();
         Assert.assertEquals(newGroupName, mod+ groupName);
         Assert.assertEquals(newGroupHeader, mod+ groupHeader);
         Assert.assertEquals(newGroupFooter, mod+ groupFooter);
-        returnToGroupPage();
+        app.returnToGroupPage();
         System.out.println("groupModificationTests finished...");
     }
 

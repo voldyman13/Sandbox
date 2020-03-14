@@ -11,23 +11,22 @@ public class GroupCreationTests extends TestBase {
         System.out.println("groupCreationTests started...");
         String expectedrMessage =
          "A new group has been entered into the address book.\n"+"return to the group page";
-        openGroupPage();
-        int before = getCountGroup();
-        initGroupCreation();
-        fillGroupForm(new Group().
+        app.openGroupPage();
+        int before = app.getCountGroup();
+        app.initGroupCreation();
+        app.fillGroupForm(new Group().
                 setGroupName("group name").
                 setGroupHeader("header").
                 setGroupFooter("footer"));
-        submitGroupCreation();
+        app.submitGroupCreation();
         //verification appearance of message
-        String actualMessage = getMessage();
+        String actualMessage = app.getMessage();
         Assert.assertEquals(actualMessage, expectedrMessage);
         System.out.println(" the message is displayed");
-        returnToGroupPage();
-        int after = getCountGroup();
+        app.returnToGroupPage();
+        int after = app.getCountGroup();
         Assert.assertEquals(after, before+1);
         System.out.println("groups before: " + before + " - groups after: " + after);
         System.out.println("groupCreationTests finished");
-
     }
 }
